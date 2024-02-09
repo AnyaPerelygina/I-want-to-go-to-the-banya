@@ -1,13 +1,51 @@
 .header {
-  padding: 28px 0;
-
-  background-color: $color-neon-blue;
-
-  .container {
+  &__wrapper {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    max-width: 1370px;
   }
 
   &__logo {
-    color: $color-default-white;
+    margin-right: 74px;
+
+    a {
+      @include hover-focus {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 140px;
+    gap: 6px;
+  }
+
+  &__favorite {
+    margin-right: 30px;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__user {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 10px;
+    border: 1px solid $color-pink-swan;
+    border-radius: 100px;
+
+    @include hover-focus {
+      border-color: $color-dark-orange;
+    }
   }
 }

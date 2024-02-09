@@ -17,7 +17,7 @@ html {
   font-size: $fz-default;
   line-height: 24px;
   font-family: $ff-montserrat;
-  color: $color-default-black;
+  color: $color-night-rider;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,8 +35,9 @@ body {
 }
 
 a {
-  color: $color-default-black;
+  color: $color-night-rider;
   text-decoration: none;
+  user-select: none;
 }
 
 img,
