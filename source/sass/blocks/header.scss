@@ -1,34 +1,88 @@
 .header {
+  font-size: 14px;
+
   &__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__subWrapper-1 {
+    min-width: 425px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: start;
     align-items: center;
-    max-width: 1370px;
+    gap: 35px;
+
+    @include vp-920 {
+      min-width: unset;
+      max-width: 152px;
+      gap: 28px;
+    }
+  }
+
+  &__subWrapper-2 {
+    min-width: 296px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 25px;
+
+    @include vp-920 {
+      min-width: unset;
+      gap: 0;
+    }
   }
 
   &__logo {
-    margin-right: 74px;
+    margin-right: 18px;
 
     a {
       @include hover-focus {
         opacity: 0.8;
       }
     }
+
+    @include vp-920 {
+      max-width: 46px;
+      margin-right: 0;
+    }
   }
 
   &__location {
-    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     max-width: 140px;
-    gap: 6px;
+    gap: 10px;
+  }
+
+  &__search {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    @include vp-920 {
+      gap: 7px;
+    }
+
+    svg {
+      display: none;
+
+      @include vp-920 {
+        display: block;
+      }
+    }
   }
 
   &__favorite {
-    margin-right: 30px;
     border: none;
     background-color: transparent;
   }
@@ -46,6 +100,12 @@
 
     @include hover-focus {
       border-color: $color-dark-orange;
+    }
+
+    @include vp-920 {
+      border: none;
+      border-radius: none;
+      gap: 15px;
     }
   }
 }

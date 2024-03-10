@@ -2,20 +2,26 @@ mixin header(headerMods, currentUrl)
   header.header(class=headerMods)
     .container
       .header__wrapper
-        if(currentUrl === "index.html")
-          span.header__logo
-            +img("logotype", "logo", "svg", 144, 70, "Логотип сайта Хочу в баню.")
-        else
-          a.header__logo(href="index.html", aria-label="Переход на главную страницу сайта.")
-            +img("logotype", "logo", "svg", 144, 70, "Логотип сайта Хочу в баню.")
-        .header__location
-          +icon("pin", 15, 19)
-          span Новосибирск
-        .main-nav
-          a.main-nav__link.btn(href="#", aria-label="Переход на страницу поиска бани") Поиск бани
-          a.main-nav__link.btn(href="#", aria-label="Переход на страницу размещения бани") Разместить баню
-        button.header__favorite.btn(target=_self, rel=rel, type=button)
-            +icon("favorite", 25, 24)
-        button.header__user.btn(target=_self, rel=rel, type=button)
-            +icon("user", 25, 25)
-            +icon("burger", 22, 18)
+        .header__subWrapper-1
+          if(currentUrl === "index.html")
+            span.header__logo
+              picture
+                source(media='(min-width: 920px)', srcset='img/logotype/logo.svg')
+                source(media='(max-width: 919px)', srcset='img/logotype/logo-mobile.svg')
+                +img("logotype", "logo", "svg", 144, 70, "Логотип сайта Хочу в баню.")
+          else
+            a.header__logo(href="index.html", aria-label="Переход на главную страницу сайта.")
+              +img("logotype", "logo", "svg", 144, 70, "Логотип сайта Хочу в баню.")
+          .header__location
+            +icon("pin", 15, 19)
+            span Новосибирск
+          a.header__search.btn(href="#", aria-label="Переход на страницу поиска бани")
+            +icon("search", 24, 24)
+            span.header__search--text Поиск бани
+        .header__subWrapper-2
+          a.header__postBanya.btn(href="#", aria-label="Переход на страницу размещения бани") Разместить баню
+          button.header__favorite.btn(target=_self, rel=rel, type=button)
+              +icon("favorite", 24, 24)
+          button.header__user.btn(target=_self, rel=rel, type=button)
+              +icon("user", 25, 25)
+              +icon("burger", 22, 18)
