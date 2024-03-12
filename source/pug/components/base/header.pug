@@ -6,8 +6,8 @@ mixin header(headerMods, currentUrl)
           if(currentUrl === "index.html")
             span.header__logo
               picture
-                source(media='(min-width: 920px)', srcset='img/logotype/logo.svg')
-                source(media='(max-width: 919px)', srcset='img/logotype/logo-mobile.svg')
+                +source('(min-width: 920px)', 'img/logotype/logo.svg')
+                +source('(max-width: 919px)', 'img/logotype/logo-mobile.svg')
                 +img("logotype", "logo", "svg", 144, 70, "Логотип сайта Хочу в баню.")
           else
             a.header__logo(href="index.html", aria-label="Переход на главную страницу сайта.")
