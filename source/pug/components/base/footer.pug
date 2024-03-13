@@ -1,3 +1,121 @@
 mixin footer(footerMods)
+  -
+    const headerButton = {
+      'Идеи для отдыха': [
+        {
+          text: "Для большой компании",
+          href: "#"
+        },
+        {
+          text: "Семейный отдых",
+          href: "#"
+        },
+        {
+          text: "Для двоих",
+          href: "#"
+        },
+        {
+          text: "Баня с купелью на улице",
+          href: "#"
+        },
+        {
+          text: "Баня за городом",
+          href: "#"
+        },
+        {
+          text: "Бани и сауны в центре",
+          href: "#"
+        },
+        {
+          text: "СПА и процедуры",
+          href: "#"
+        }
+      ],
+      'Расположение': [
+        {
+          text: "Бани Центрального района",
+          href: "#"
+        },
+        {
+          text: "Бани Заельцовского района",
+          href: "#"
+        },
+        {
+          text: "Бани Октябрьского района",
+          href: "#"
+        },
+        {
+          text: "Бани Держинского района",
+          href: "#"
+        },
+        {
+          text: "Бани Железнодорожного района",
+          href: "#"
+        },
+        {
+          text: "Бани Ленинского района",
+          href: "#"
+        },
+        {
+          text: "Бани Кировского района",
+          href: "#"
+        },
+        {
+          text: "Бани Первомайского района",
+          href: "#"
+        },
+        {
+          text: "Бани Советского района",
+          href: "#"
+        },
+        {
+          text: "Бани Бердска",
+          href: "#"
+        }
+      ],
+      'Пользователям': [
+        {
+          text: "О проекте",
+          href: "#"
+        },
+        {
+          text: "Правила и условия бронирования",
+          href: "#"
+        },
+        {
+          text: "Пользовательское соглашение",
+          href: "#"
+        },
+        {
+          text: "Положение о конфиденциальности и сookie",
+          href: "#"
+        },
+        {
+          text: "Вопрос-Ответ",
+          href: "#"
+        },
+        {
+          text: "Для партнеров",
+          href: "#"
+        },
+        {
+          text: "Контакты",
+          href: "#"
+        }
+      ],
+    };
+
   footer.footer(class=footerMods)
     .container
+      if(currentUrl === "index.html")
+        span.footer__logo
+          +img("logotype", "logo", "svg", 144, 70, "Логотип сайта Хочу в баню.")
+      else
+            a.footer__logo(href="index.html", aria-label="Переход на главную страницу сайта.")
+      each val, key in headerButton
+        .footer__list
+            h2.footer__title= key
+            .footer__content
+              each link in val
+                a.btn.footer__link(href=link.href)= link.text
+      a.btn.footer__button(href="#") Добавить баню
