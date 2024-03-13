@@ -1,6 +1,16 @@
 .header {
   font-size: 14px;
 
+  .container {
+    @include vp-1023 {
+      padding: 0 27px 0 22px;
+    }
+
+    @include vp-920 {
+      padding: 7px 6px 7px 17px;
+    }
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: row;
