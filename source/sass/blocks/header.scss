@@ -95,6 +95,10 @@
   &__favorite {
     border: none;
     background-color: transparent;
+
+    svg {
+      fill: $color-night-rider;
+    }
   }
 
   &__user {
@@ -116,6 +120,10 @@
       border: none;
       border-radius: none;
       gap: 15px;
+    }
+
+    svg {
+      fill: $color-night-rider;
     }
   }
 }
