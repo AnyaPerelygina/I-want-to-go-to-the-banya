@@ -1,5 +1,5 @@
 const contentHeader = () => {
-  const breakpoint = window.matchMedia('(max-width: 919px)');
+  const breakpoint = window.matchMedia('(max-width: 767px)');
   const searchText = document.querySelector('.header__search--text');
   const location = document.querySelector('.header__location');
   const postBanya = document.querySelector('.header__postBanya');
