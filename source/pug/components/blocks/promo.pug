@@ -1,0 +1,12 @@
+mixin promo()
+  section.promo
+    .container
+      .promo__wrapper
+        .promo__text
+          h2.promo__title Продавайте свои услуги вместе с&nbsp;нами
+          p Размещайте свои бани на&nbsp;портале, публикуйте акции, увеличивайте продажи
+        picture
+          +source('(max-width: 767px)', 'img/promo/promo-mobile.jpg')
+          +source('(max-width: 1023px)', 'img/promo/promo-tablet.jpg')
+          +source('(max-width: 767px)', 'img/promo/promo.jpg')
+          +img("promo", "promo", "jpg", 1489, 442, "Промо картинка бани.")

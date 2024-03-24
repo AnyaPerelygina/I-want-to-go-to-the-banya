@@ -1,5 +1,10 @@
 .discount {
   background-color: $color-alice-blue;
+  padding: 40px 0 60px;
+
+  @include vp-767 {
+    padding: 40px 0 16px;
+  }
 
   .container {
     @include vp-767 {
