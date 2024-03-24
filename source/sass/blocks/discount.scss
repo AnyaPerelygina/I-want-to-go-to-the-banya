@@ -135,7 +135,7 @@
 
     &::after {
       position: absolute;
-      content: url("../../img/discount/discount.png");
+      content: url("../img/discount/discount.png");
       top: -184px;
       right: -247px;
       z-index: 1;
@@ -147,7 +147,7 @@
       }
 
       @include vp-1023 {
-        content: url("../../img/discount/discount-tablet.png");
+        content: url("../img/discount/discount-tablet.png");
         top: -197px;
         right: -89px;
       }
@@ -157,7 +157,7 @@
       }
 
       @include vp-767 {
-        content: url("../../img/discount/discount-mobile.png");
+        content: url("../img/discount/discount-mobile.png");
         top: -67px;
         right: 50%;
         transform: translateX(50%);
