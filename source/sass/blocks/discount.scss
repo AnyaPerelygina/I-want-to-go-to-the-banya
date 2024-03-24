@@ -1,9 +1,13 @@
 .discount {
   background-color: $color-alice-blue;
-  padding: 40px 0 60px;
+  padding: 0;
+
+  @include vp-1023 {
+    padding: 38px 0 51px;
+  }
 
   @include vp-767 {
-    padding: 40px 0 16px;
+    padding: 0;
   }
 
   .container {
@@ -13,6 +17,8 @@
   }
 
   &__wrapper {
+    display: grid;
+    grid-template-columns: 539px 559px;
     flex-wrap: nowrap;
     align-items: center;
 
@@ -20,37 +26,19 @@
     margin: 0 auto;
     padding: 30px 0 33px 60px;
 
-    position: relative;
-
-    &::after {
-      position: absolute;
-      content: url('../../img/discount/discount.png');
-      right: -40px;
-      top: -42px;
-    }
-
-    @media (min-width: 1024px) and (max-width: 1919px) {
-      padding: 30px 0;
+    @media (min-width: 1024px) and (max-width: 1500px) {
+      grid-template-columns: auto 559px;
+      padding: 30px 0 33px;
     }
 
     @include vp-1023 {
-      padding: 44px 0 52px;
-
-      &::after {
-        content: url('../../img/discount/discount-tablet.png');
-        right: 7px;
-        top: -44px;
-      }
+      grid-template-columns: auto 389px;
+      padding: 0;
     }
 
     @include vp-767 {
-      padding: 181px 15px 15px 15px;
-
-      &::after {
-        content: url('../../img/discount/discount-mobile.png');
-        right: 50%;
-        transform: translateX(50%);
-      }
+      grid-template-columns: 1fr;
+      padding: 27px 15px 31px;
     }
   }
 
@@ -62,13 +50,16 @@
 
     @include vp-1023 {
       gap: 18px;
-      max-width: 310px;
+      min-width: 303px;
     }
 
     @include vp-767 {
       width: 100%;
       max-width: 100%;
+      min-width: unset;
       gap: 25px;
+
+      order: 2;
     }
 
     p {
@@ -78,9 +69,15 @@
 
       margin: 0;
 
+      @include vp-1023 {
+        min-height: 66px;
+      }
+
       @include vp-767 {
         font-size: 16px;
         line-height: 19px;
+
+        min-height: unset;
       }
     }
 
@@ -126,6 +123,48 @@
     @include vp-767 {
       font-size: 22px;
       line-height: 29px;
+    }
+  }
+
+  &__img {
+    position: relative;
+
+    @include vp-767 {
+      min-height: 156px;
+    }
+
+    &::after {
+      position: absolute;
+      content: url("../../img/discount/discount.png");
+      top: -184px;
+      right: -247px;
+      z-index: 1;
+
+      max-width: 559px;
+
+      @media (min-width: 1024px) and (max-width: 1700px) {
+        right: 0;
+      }
+
+      @include vp-1023 {
+        content: url("../../img/discount/discount-tablet.png");
+        top: -197px;
+        right: -89px;
+      }
+
+      @media (min-width: 768px) and (max-width: 830px) {
+        right: -53px;
+      }
+
+      @include vp-767 {
+        content: url("../../img/discount/discount-mobile.png");
+        top: -67px;
+        right: 50%;
+        transform: translateX(50%);
+
+        width: unset;
+        max-width: 290px;
+      }
     }
   }
 }
